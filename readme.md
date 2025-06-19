@@ -14,20 +14,22 @@ This is a simple Flask web application demonstrating a classic SQL Injection vul
 Here are screenshots demonstrating the SQL Injection app in action:
 
 ![SQL Injection Input](sql.png)
+  
    The login page with the SQL injection payload entered in the username field: ' OR '1'='1' --
 
 ![SQL Injection Input](failed.png)
+
 An example of a failed login attempt with incorrect credentials.
 
 ![SQL Injection Input](success.png)
+
 The result after the SQL injection payload is submitted — logged in as the admin user without a valid password.
 
 ![SQL Injection Input](log.png)
+
 The Flask server terminal output showing the debug print of the executed SQL query reflecting the injection.
 
----
 
-_Add these files (`sql.png`, `failed.png`, `success.png`, `log.png`) to your GitHub repo folder to display them properly._
 
 
 ## Getting Started
