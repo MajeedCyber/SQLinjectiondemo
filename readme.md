@@ -9,6 +9,27 @@ This is a simple Flask web application demonstrating a classic SQL Injection vul
 - Simple SQLite database with example users
 - Debug output showing the executed SQL query
 
+  ## Demo
+
+Here are screenshots demonstrating the SQL Injection app in action:
+
+1. **SQL Injection Input (`sql.png`)**  
+   The login page with the SQL injection payload entered in the username field: ' OR '1'='1' --
+
+2. **Failed Login (`failed.png`)**  
+An example of a failed login attempt with incorrect credentials.
+
+3. **Successful Login (`success.png`)**  
+The result after the SQL injection payload is submitted — logged in as the admin user without a valid password.
+
+4. **Terminal Output (`log.png`)**  
+The Flask server terminal output showing the debug print of the executed SQL query reflecting the injection.
+
+---
+
+_Add these files (`sql.png`, `failed.png`, `success.png`, `log.png`) to your GitHub repo folder to display them properly._
+
+
 ## Getting Started
 
 ### Prerequisites
