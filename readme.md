@@ -27,14 +27,14 @@ This is a simple Flask web application demonstrating a classic SQL Injection vul
    python3 app.py
 Open your browser and go to http://127.0.0.1:5000
 
-Usage
+Open your browser and go to [http://127.0.0.1:5000](http://127.0.0.1:5000)
+
+## Usage
+
 To demonstrate the SQL Injection vulnerability:
 
-Enter this into the Username field:
+Enter this into the **Username** field:
 
-matlab
-Copy
-Edit
 ' OR '1'='1' --
 Leave the Password field blank.
 
@@ -42,20 +42,28 @@ Submit the form.
 
 You will bypass authentication and be logged in as the first user in the database (e.g., admin).
 
-How it works
+
+Leave the **Password** field blank.
+
+Submit the form.
+
+You will bypass authentication and be logged in as the first user in the database (e.g., admin).
+
+## How it works
+
 The app builds SQL queries by concatenating user input directly into the SQL statement, like this:
 
-sql
-Copy
-Edit
+```sql
 SELECT * FROM users WHERE username = '[input]' AND password = '[input]'
-By injecting SQL code in the username field, the attacker can modify the query logic to always return true, bypassing login.
 
-How to fix
-Use parameterized queries or prepared statements to safely handle user input:
 
-python
-Copy
-Edit
+## How to fix
+
+The vulnerability exists because the app constructs SQL queries by directly inserting user input into the query string. To fix this, **use parameterized queries (also called prepared statements)** which safely handle user input and prevent SQL injection.
+
+Example fix in Python with SQLite:
+
+```python
 cursor.execute("SELECT * FROM users WHERE username = ? AND password = ?", (username, password))
+
 
