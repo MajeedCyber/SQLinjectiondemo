@@ -53,8 +53,9 @@ You will bypass authentication and be logged in as the first user in the databas
 
 The app builds SQL queries by concatenating user input directly into the SQL statement, like this:
 
-```sql
-SELECT * FROM users WHERE username = '[input]' AND password = '[input]'
+      ```sql
+      SELECT * FROM users WHERE username = '[input]' AND password = '[input]'
+
 
 
 ## How to fix
