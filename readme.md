@@ -48,7 +48,7 @@ The Flask server terminal output showing the debug print of the executed SQL que
 3. Run the app
    ```bash
    python3 app.py
-Open your browser and go to http://127.0.0.1:5000
+
 
 Open your browser and go to [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
@@ -71,13 +71,6 @@ Leave the **Password** field blank.
 Submit the form.
 
 You will bypass authentication and be logged in as the first user in the database (e.g., admin).
-
-## How it works
-
-The app builds SQL queries by concatenating user input directly into the SQL statement, like this:
-
-      ```sql
-      SELECT * FROM users WHERE username = '[input]' AND password = '[input]'
 
 
 
